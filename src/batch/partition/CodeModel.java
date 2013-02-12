@@ -599,6 +599,7 @@ public class CodeModel extends PartitionFactoryHelper<PExpr> {
           hl.add(e.partition(desired, env));
         if (op == Op.SEQ) {
           hl.align();
+          hl.fill_history();
           return hl.merge_simple(0, this, this, this);
         } else
           return hl.merge_outputs_at(desired, this);
